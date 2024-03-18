@@ -14,18 +14,10 @@ namespace guitar
         // Method to set current chord
         public void SetChord(string _chord)
         {
-            // Update the current chord
-            if(currentChord != "default")
-            {
-                currentChord = "default"; // Reset to default if not already default
-                currentChordText.text = " "; // Clear display
-            }  
-
-            else
-            {
-                currentChord = _chord; // Set current chord
-                currentChordText.text = currentChord; // Display current chord
-            }
+            currentChord = _chord;
+            Debug.Log("Current chord: " + currentChord);
+            // Update UI text
+            currentChordText.text = currentChord;
         }
 
         // Method to get current chord
