@@ -12,24 +12,20 @@ namespace guitar
         public TextMeshProUGUI currentChordText;
 
         // Method to set current chord
-        public void SetCurrentChord(string _chord)
+        public void SetChord(string _chord)
         {
-            Debug.Log("Pressed button: " + _chord);
-            currentChord = _chord; // Set current chord
-            currentChordText.text = _chord; // Display current chord
-
             // Update the current chord
-            //*if(currentChord != "default")
-            //*{
-            //*    currentChord = "default"; // Reset to default if not already default
-            //*    currentChordText.text = " "; // Clear display
-            //*}  
+            if(currentChord != "default")
+            {
+                currentChord = "default"; // Reset to default if not already default
+                currentChordText.text = " "; // Clear display
+            }  
 
-            //*else
-            //*{
-            //*    currentChord = _chord; // Set current chord
-            //*    currentChordText.text = currentChord; // Display current chord
-            //*}
+            else
+            {
+                currentChord = _chord; // Set current chord
+                currentChordText.text = currentChord; // Display current chord
+            }
         }
 
         // Method to get current chord
