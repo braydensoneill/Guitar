@@ -14,24 +14,24 @@ namespace guitar
         // Method to set current chord
         public void SetChord(string _chord)
         {
-            // Update the current cho   rd
+            // Update the current chord
             if(currentChord != "default")
             {
-                currentChord = "default";
-                currentChordText.text = " ";
+                currentChord = "default"; // Reset to default if not already default
+                currentChordText.text = " "; // Clear display
             }  
 
             else
             {
-                currentChord = _chord;
-                currentChordText.text = currentChord;
+                currentChord = _chord; // Set current chord
+                currentChordText.text = currentChord; // Display current chord
             }
         }
 
         // Method to get current chord
         public string GetCurrentChord()
         {
-            return currentChord;
+            return currentChord; // Return current chord
         }
     }
 }

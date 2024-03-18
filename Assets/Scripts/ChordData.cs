@@ -28,34 +28,9 @@ namespace guitar
         // Method to initialize example chords
         void Start()
         {
-            // Create and add example chords
-            AddChord("default", new List<Note>
-            {
-                new Note { noteX = 0, noteY = 1 },
-                new Note { noteX = 0, noteY = 2 },
-                new Note { noteX = 0, noteY = 3 },
-                new Note { noteX = 0, noteY = 4 },
-                new Note { noteX = 0, noteY = 5 },
-                new Note { noteX = 0, noteY = 6 }
-            });
-
-            // Create and add example chords
-            AddChord("G", new List<Note>
-            {
-                new Note { noteX = 3, noteY = 1 },
-                new Note { noteX = 2, noteY = 2 },
-                new Note { noteX = 0, noteY = 3 },
-                new Note { noteX = 0, noteY = 4 },
-                new Note { noteX = 3, noteY = 5 },
-                new Note { noteX = 3, noteY = 6 }
-            });
-
-            // Add other chords...
-        }
-
-        void Update()
-        {
-            Debug.Log(GetAudioClipPath(0,0));
+            AddDefaultChord();
+            AddMajorChords();
+            AddMinorChords();
         }
 
         // Method to add a new chord
@@ -84,6 +59,39 @@ namespace guitar
             string name = "X" + _noteX.ToString() + "Y" + _noteY.ToString();
             string path = location + name;
             return path;
+        }
+
+        private void AddDefaultChord()
+        {
+            AddChord("default", new List<Note>
+            {
+                new Note { noteX = 0, noteY = 1 },
+                new Note { noteX = 0, noteY = 2 },
+                new Note { noteX = 0, noteY = 3 },
+                new Note { noteX = 0, noteY = 4 },
+                new Note { noteX = 0, noteY = 5 },
+                new Note { noteX = 0, noteY = 6 }
+            });
+        }
+
+        private void AddMajorChords()
+        {
+            AddChord("G", new List<Note>
+            {
+                new Note { noteX = 3, noteY = 1 },
+                new Note { noteX = 2, noteY = 2 },
+                new Note { noteX = 0, noteY = 3 },
+                new Note { noteX = 0, noteY = 4 },
+                new Note { noteX = 3, noteY = 5 },
+                new Note { noteX = 3, noteY = 6 }
+            });
+
+            // Add other major chords here
+        }
+
+        private void AddMinorChords()
+        {
+            // Add minor chords here
         }
     }
 }

@@ -44,7 +44,7 @@ namespace guitar
             currentChord = chordManager.GetCurrentChord();
             if (string.IsNullOrEmpty(currentChord))
             {
-                currentChord = "default";
+                currentChord = "default"; // Default chord if current chord is null or empty
             }
         }
 
