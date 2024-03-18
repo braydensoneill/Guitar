@@ -10,10 +10,11 @@ namespace guitar
         private ChordManager chordManager;
         private StringManager stringManager;
 
-        public GameObject[] strings;
-
         // Current chord
         [SerializeField] private string currentChord;
+
+        // Strings
+        public GameObject[] strings;
 
         // Current notes
         [SerializeField] private Tuple<int, int>[] currentNotes;
