@@ -1,0 +1,78 @@
+using UnityEngine;
+using System;
+using System.Collections.Generic;
+using Unity.VisualScripting;
+using System.Runtime.CompilerServices;
+
+namespace guitar
+{
+    public class ChordData : MonoBehaviour
+    {
+        [System.Serializable]
+        public class Note
+        {
+            public int noteX;
+            public int noteY;
+            public AudioClip audioClip;
+        }
+
+        [System.Serializable]
+        public class Chord
+        {
+            public string name;
+            public List<Note> notes = new List<Note>();
+        }
+
+        public List<Chord> chords = new List<Chord>();
+
+        // Method to initialize example chords
+        void Start()
+        {
+            // Create and add example chords
+            AddChord("null", new List<Note>
+            {
+                new Note { noteX = 0, noteY = 1 },
+                new Note { noteX = 0, noteY = 2 },
+                new Note { noteX = 0, noteY = 3 },
+                new Note { noteX = 0, noteY = 4 },
+                new Note { noteX = 0, noteY = 5 },
+                new Note { noteX = 0, noteY = 6 }
+            });
+
+            // Add other chords...
+        }
+
+        void Update()
+        {
+            Debug.Log(GetAudioClipPath(0,0));
+        }
+
+        // Method to add a new chord
+        public void AddChord(string _name, List<Note> _notes)
+        {
+            Chord newChord = new Chord { name = _name, notes = _notes };
+
+            foreach (Note note in _notes)
+            {
+                note.audioClip = Resources.Load<AudioClip>(GetAudioClipPath(note.noteX, note.noteY));
+            }
+
+            chords.Add(newChord);
+        }
+
+        // Method to retrieve a chord by name
+        public Chord GetChord(string _name)
+        {
+            return chords.Find(chord => chord.name == _name);
+        }
+
+        // Method to construct the audio clip path
+        public string GetAudioClipPath(int _noteX, int _noteY)
+        {   
+            string location = "Notes/X" + _noteX.ToString() + "/";
+            string name = "X" + _noteX.ToString() + "Y" + _noteY.ToString();
+            string path = location + name;
+            return path;
+        }
+    }
+}

@@ -36,10 +36,10 @@ namespace guitar
         }
 
         // Method to set current note
-        public void SetCurrentNote(int x, int y)
+        public void SetCurrentNote(int _noteX, int _noteY)
         {
-            currentNoteX = x;
-            currentNoteY = y;
+            currentNoteX = _noteX;
+            currentNoteY = _noteY;
         }
 
         // Method to get current note as a tuple
