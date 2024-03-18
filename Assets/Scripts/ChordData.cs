@@ -29,7 +29,7 @@ namespace guitar
         void Start()
         {
             // Create and add example chords
-            AddChord("null", new List<Note>
+            AddChord("default", new List<Note>
             {
                 new Note { noteX = 0, noteY = 1 },
                 new Note { noteX = 0, noteY = 2 },
