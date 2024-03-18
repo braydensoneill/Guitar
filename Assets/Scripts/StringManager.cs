@@ -5,8 +5,6 @@ namespace guitar
 {
     public class StringManager : MonoBehaviour
     {
-        private GuitarManager guitarManager;
-
         // Number of string this script is working on   
         public int stringNumber;
 
@@ -68,8 +66,6 @@ namespace guitar
             // Retrieve the current chord
             ChordData.Chord chord = chordData.GetChord(currentChord);
 
-            Debug.Log(currentChord);
-            
             // Retrieve the first note's X and Y values from the current chord
             currentNoteX = chord.notes[stringNumber - 1].noteX;
             currentNoteY = chord.notes[stringNumber - 1].noteY;

@@ -11,7 +11,7 @@ namespace guitar
         private StringManager stringManager;
 
         // Current chord
-        [SerializeField] private string currentChord;
+        [SerializeField] private string currentChord = "default";
 
         // Strings
         public GameObject[] strings;
@@ -22,33 +22,42 @@ namespace guitar
         // Initialize
         void Start()
         {
+            InitializeManagers();
+            InitializeCurrentNotes();
+        }
+
+        private void InitializeManagers()
+        {
             // Find and initialize ChordManager and StringManagers
             chordManager = FindAnyObjectByType<ChordManager>();
             stringManager = FindFirstObjectByType<StringManager>();
+        }
 
+        private void InitializeCurrentNotes()
+        {
             // Initialize currentNotes array
             currentNotes = new Tuple<int, int>[strings.Length];
         }
 
+        // Update
         private void Update()
         {
-            Debug.Log(currentChord);
             // Find current chord/note values every frame
-            GetCurrentChord();
-            GetCurrentNotes();
+            UpdateChord();
+            UpdateNotes();
+
+            Debug.Log(currentChord);
         }
 
-        private void GetCurrentChord()
+        // Update Methods
+        private void UpdateChord()
         {
             // Retrieve current chord from ChordManager
-            currentChord = chordManager.GetCurrentChord();
-            if (string.IsNullOrEmpty(currentChord))
-            {
-                currentChord = "default"; // Default chord if current chord is null or empty
-            }
+            string retrievedChord = chordManager.GetCurrentChord();
+            currentChord = string.IsNullOrEmpty(retrievedChord) ? "default" : retrievedChord;
         }
 
-        private void GetCurrentNotes()
+        private void UpdateNotes()
         {
             // Retrieve current notes from StringManagers
             for (int i = 0; i < strings.Length; i++)
@@ -56,7 +65,5 @@ namespace guitar
                 currentNotes[i] = strings[i].GetComponent<StringManager>().GetCurrentNote(currentChord);
             }
         }
-
-        // Define other methods and variables as needed
     }
 }

@@ -1,5 +1,5 @@
-using UnityEngine;
 using TMPro;
+using UnityEngine;
 
 namespace guitar
 {
@@ -12,12 +12,18 @@ namespace guitar
         public TextMeshProUGUI currentChordText;
 
         // Method to set current chord
-        public void SetChord(string _chord)
+        public void SetChord(string chord)
         {
-            currentChord = _chord;
-            Debug.Log("Current chord: " + currentChord);
-            // Update UI text
-            currentChordText.text = currentChord;
+            if (currentChord != "default")
+            {
+                currentChord = "default"; // Reset to default if not already default
+                currentChordText.text = " "; // Clear display
+            }
+            else
+            {
+                currentChord = chord; // Set current chord
+                currentChordText.text = currentChord; // Display current chord
+            }
         }
 
         // Method to get current chord
