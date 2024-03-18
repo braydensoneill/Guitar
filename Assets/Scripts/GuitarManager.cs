@@ -32,22 +32,23 @@ namespace guitar
 
         private void Update()
         {
+            Debug.Log(currentChord);
             // Find current chord/note values every frame
-            UpdateChord();
-            UpdateNotes();
-
-            Debug.Log("Current chord: " + currentChord);
+            GetCurrentChord();
+            GetCurrentNotes();
         }
 
-        private void UpdateChord()
+        private void GetCurrentChord()
         {
             // Retrieve current chord from ChordManager
             currentChord = chordManager.GetCurrentChord();
             if (string.IsNullOrEmpty(currentChord))
+            {
                 currentChord = "default"; // Default chord if current chord is null or empty
+            }
         }
 
-        private void UpdateNotes()
+        private void GetCurrentNotes()
         {
             // Retrieve current notes from StringManagers
             for (int i = 0; i < strings.Length; i++)
@@ -55,5 +56,7 @@ namespace guitar
                 currentNotes[i] = strings[i].GetComponent<StringManager>().GetCurrentNote(currentChord);
             }
         }
+
+        // Define other methods and variables as needed
     }
 }

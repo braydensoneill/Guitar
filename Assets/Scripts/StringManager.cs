@@ -68,6 +68,8 @@ namespace guitar
             // Retrieve the current chord
             ChordData.Chord chord = chordData.GetChord(currentChord);
 
+            Debug.Log(currentChord);
+            
             // Retrieve the first note's X and Y values from the current chord
             currentNoteX = chord.notes[stringNumber - 1].noteX;
             currentNoteY = chord.notes[stringNumber - 1].noteY;
