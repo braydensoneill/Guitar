@@ -47,16 +47,8 @@ namespace guitar
         // Method to play the string sound
         public void PlayStringSound()
         {
-            if (currentNoteAudio != null)
-            {
-                Debug.Log("String button pressed");
-                // Play the sound using central AudioSource
-                audioSource.PlayOneShot(currentNoteAudio);
-            }
-            else
-            {
-                Debug.LogWarning("Current note audio is null. Cannot play string sound.");
-            }
+            // Play the sound using central AudioSource
+            audioSource.PlayOneShot(currentNoteAudio);
         }
 
         // Method to get current note as a tuple
@@ -68,8 +60,6 @@ namespace guitar
             // Retrieve the current chord
             ChordData.Chord chord = chordData.GetChord(currentChord);
 
-            Debug.Log(currentChord);
-            
             // Retrieve the first note's X and Y values from the current chord
             currentNoteX = chord.notes[stringNumber - 1].noteX;
             currentNoteY = chord.notes[stringNumber - 1].noteY;

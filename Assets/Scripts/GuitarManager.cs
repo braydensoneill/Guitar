@@ -34,21 +34,21 @@ namespace guitar
         {
             Debug.Log(currentChord);
             // Find current chord/note values every frame
-            GetCurrentChord();
-            GetCurrentNotes();
+            UpdateCurrentChord();
+            UpdateCurrentNotes();
         }
 
-        private void GetCurrentChord()
+        private void UpdateCurrentChord()
         {
             // Retrieve current chord from ChordManager
             currentChord = chordManager.GetCurrentChord();
+
+            // Default chord if current chord is null or empty
             if (string.IsNullOrEmpty(currentChord))
-            {
-                currentChord = "default"; // Default chord if current chord is null or empty
-            }
+                currentChord = "default";
         }
 
-        private void GetCurrentNotes()
+        private void UpdateCurrentNotes()
         {
             // Retrieve current notes from StringManagers
             for (int i = 0; i < strings.Length; i++)
