@@ -26,7 +26,7 @@ namespace guitar
         public List<Chord> chords = new List<Chord>();
 
         // Method to initialize example chords
-        void Start()
+        void Awake()
         {
             AddDefaultChord();
             AddMajorChords();
