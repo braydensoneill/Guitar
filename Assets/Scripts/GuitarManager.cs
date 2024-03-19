@@ -11,7 +11,7 @@ namespace guitar
         private StringManager stringManager;
 
         // Current chord
-        [SerializeField] private string currentChord = "default";
+        [SerializeField] private string currentChord;
 
         // Strings
         public GameObject[] strings;
@@ -53,8 +53,9 @@ namespace guitar
         private void UpdateChord()
         {
             // Retrieve current chord from ChordManager
-            string retrievedChord = chordManager.GetCurrentChord();
-            currentChord = string.IsNullOrEmpty(retrievedChord) ? "default" : retrievedChord;
+            currentChord = chordManager.GetCurrentChord();
+            if (string.IsNullOrEmpty(currentChord))
+                currentChord = "default"; // Default chord if current chord is null or empty
         }
 
         private void UpdateNotes()

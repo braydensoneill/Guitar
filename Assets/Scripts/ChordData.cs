@@ -40,6 +40,7 @@ namespace guitar
 
             foreach (Note note in _notes)
             {
+                // For some reason the parent folder needds to be 'Resources' when finding audio files
                 note.audioClip = Resources.Load<AudioClip>(GetAudioClipPath(note.noteX, note.noteY));
             }
 
@@ -55,6 +56,7 @@ namespace guitar
         // Method to construct the audio clip path
         public string GetAudioClipPath(int _noteX, int _noteY)
         {   
+            // Ignore the resources folder, start path at notes
             string location = "Notes/X" + _noteX.ToString() + "/";
             string name = "X" + _noteX.ToString() + "Y" + _noteY.ToString();
             string path = location + name;
@@ -63,8 +65,7 @@ namespace guitar
 
         private void AddDefaultChord()
         {
-            AddChord("default", new List<Note>
-            {
+            AddChord("default", new List<Note> {
                 new Note { noteX = 0, noteY = 1 },
                 new Note { noteX = 0, noteY = 2 },
                 new Note { noteX = 0, noteY = 3 },
@@ -76,8 +77,7 @@ namespace guitar
 
         private void AddMajorChords()
         {
-            AddChord("G", new List<Note>
-            {
+            AddChord("G", new List<Note> {
                 new Note { noteX = 3, noteY = 1 },
                 new Note { noteX = 2, noteY = 2 },
                 new Note { noteX = 0, noteY = 3 },
@@ -86,8 +86,7 @@ namespace guitar
                 new Note { noteX = 3, noteY = 6 }
             });
 
-            AddChord("F", new List<Note>
-            {
+            AddChord("F", new List<Note> {
                 new Note { noteX = 1, noteY = 1 },
                 new Note { noteX = 3, noteY = 2 },
                 new Note { noteX = 3, noteY = 3 },
@@ -96,8 +95,7 @@ namespace guitar
                 new Note { noteX = 0, noteY = 6 }
             });
 
-            AddChord("E", new List<Note>
-            {
+            AddChord("E", new List<Note> {
                 new Note { noteX = 0, noteY = 1 },
                 new Note { noteX = 1, noteY = 2 },
                 new Note { noteX = 2, noteY = 3 },
@@ -110,8 +108,7 @@ namespace guitar
 
         private void AddMinorChords()
         {
-            AddChord("Em", new List<Note>
-            {
+            AddChord("Em", new List<Note> {
                 new Note { noteX = 0, noteY = 1 },
                 new Note { noteX = 2, noteY = 2 },
                 new Note { noteX = 2, noteY = 3 },

@@ -27,14 +27,14 @@ namespace guitar
             // Reference to GuitarManager script
             GuitarManager guitarManager = FindFirstObjectByType<GuitarManager>();
 
-            // Fetch the default note values from the "null" chord in ChordData
+            // Fetch the default note values from the "default" chord in ChordData
             ChordData chordData = FindFirstObjectByType<ChordData>(); // Assuming there's only one ChordData in the scene
-            ChordData.Chord nullChord = chordData.GetChord("default"); // Use "null" chord for default values
+            ChordData.Chord defaultChord = chordData.GetChord("default"); // Use "default" chord for default values
 
-            // Set the default note values to those of the "null" chord
-            defaultNoteX = nullChord.notes[stringNumber - 1].noteX;
-            defaultNoteY = nullChord.notes[stringNumber - 1].noteY;
-            defaultNoteAudio = nullChord.notes[stringNumber - 1].audioClip;
+            // Set the default note values to those of the "default" chord
+            defaultNoteX = defaultChord.notes[stringNumber - 1].noteX;
+            defaultNoteY = defaultChord.notes[stringNumber - 1].noteY;
+            defaultNoteAudio = defaultChord.notes[stringNumber - 1].audioClip;
 
             // set the value of the current note to the value of the default note
             currentNoteX = defaultNoteX;
