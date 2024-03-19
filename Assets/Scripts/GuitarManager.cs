@@ -22,19 +22,10 @@ namespace guitar
         // Initialize
         void Start()
         {
-            InitializeManagers();
-            InitializeCurrentNotes();
-        }
-
-        private void InitializeManagers()
-        {
             // Find and initialize ChordManager and StringManagers
             chordManager = FindAnyObjectByType<ChordManager>();
             stringManager = FindFirstObjectByType<StringManager>();
-        }
 
-        private void InitializeCurrentNotes()
-        {
             // Initialize currentNotes array
             currentNotes = new Tuple<int, int>[strings.Length];
         }
