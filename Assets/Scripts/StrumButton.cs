@@ -3,7 +3,7 @@ using UnityEngine.EventSystems;
 
 namespace guitar
 {
-    public class CustomButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+    public class StrumButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         private bool mouseButtonDown = false;
         private bool canActivate = true;
