@@ -115,6 +115,15 @@ namespace guitar
                 new Note { noteX = 0, noteY = 6 }
             });
 
+            AddChord("B", new List<Note> {
+                new Note { noteX = -1, noteY = 1 },
+                new Note { noteX = 2, noteY = 2 },
+                new Note { noteX = 4, noteY = 3 },
+                new Note { noteX = 4, noteY = 4 },
+                new Note { noteX = 5, noteY = 5 },
+                new Note { noteX = 2, noteY = 6 }
+            });
+
             AddChord("F", new List<Note> {
                 new Note { noteX = 1, noteY = 1 },
                 new Note { noteX = 3, noteY = 2 },

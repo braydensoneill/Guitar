@@ -46,15 +46,10 @@ namespace guitar
         public void PlayStringSound()
         {
             if (currentNoteAudio != null)
-            {
-                Debug.Log("String button pressed");
-                // Play the sound using central AudioSource
-                audioSource.PlayOneShot(currentNoteAudio);
-            }
+                audioSource.PlayOneShot(currentNoteAudio); // Play the sound using central AudioSource
+                
             else
-            {
                 Debug.LogWarning("Current note audio is null. Cannot play string sound.");
-            }
         }
 
         // Method to get current note as a tuple
