@@ -3,9 +3,8 @@ using UnityEngine.EventSystems;
 
 namespace guitar
 {
-    public class StrumButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+    public class StrumButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPointerEnterHandler, IPointerExitHandler
     {
-        private bool mouseButtonDown = false;
         private bool canActivate = true;
 
         private StringManager stringManager; // Reference to StringManager script
@@ -23,13 +22,9 @@ namespace guitar
 
         public void OnPointerEnter(PointerEventData eventData)
         {
-            if (mouseButtonDown && canActivate)
+            if (Input.GetMouseButton(0) && canActivate)
             {
-                // Activate button functionality here
-                if(stringManager != null)
-                    stringManager.PlayStringSound(); // Invoke PlayStringSound method from StringManager
-
-                canActivate = false; // Prevent further activations until the mouse exits the button area
+                ActivateButton();
             }
         }
 
@@ -38,16 +33,22 @@ namespace guitar
             canActivate = true; // Allow button to activate again when mouse re-enters
         }
 
-        void Update()
+        public void OnPointerDown(PointerEventData eventData)
         {
-            // Check if the left mouse button is held down
-            if (Input.GetMouseButtonDown(0))
+            ActivateButton();
+        }
+
+        public void OnPointerUp(PointerEventData eventData)
+        {
+            canActivate = true; // Allow button to activate again when mouse button is released
+        }
+
+        void ActivateButton()
+        {
+            if (stringManager != null)
             {
-                mouseButtonDown = true;
-            }
-            if (Input.GetMouseButtonUp(0))
-            {
-                mouseButtonDown = false;
+                stringManager.PlayStringSound(); // Invoke PlayStringSound method from StringManager
+                canActivate = false; // Prevent further activations until the mouse exits the button area
             }
         }
     }

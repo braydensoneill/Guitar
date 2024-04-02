@@ -47,7 +47,7 @@ namespace guitar
         {
             if (currentNoteAudio != null)
             {
-                // Stop the currently playing sound
+                // Stop the currently playing coming from this object
                 audioSource.Stop();
 
                 // Play the sound using central AudioSource
