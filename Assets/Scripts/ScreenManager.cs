@@ -3,12 +3,12 @@ using UnityEngine.EventSystems;
 
 namespace guitar
 {
-    public class StrumButton : MonoBehaviour
+    public class ScreenManager : MonoBehaviour
     {
         void Start()
         {
             // Lock screen orientation to landscape
-            Screen.orientation = ScreenOrientation.Landscape;
+            Screen.orientation = ScreenOrientation.LandscapeLeft;
         }
     }
 }
