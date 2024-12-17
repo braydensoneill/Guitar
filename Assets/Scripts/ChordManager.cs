@@ -1,35 +1,23 @@
-using TMPro;
 using UnityEngine;
 
 namespace guitar
 {
     public class ChordManager : MonoBehaviour
     {
-        // Current chord
-        private string currentChord;
+        // Variable to hold the current chord
+        private string currentChord = "default";
 
-        // TextMeshPro object to display current chord
-        public TextMeshProUGUI currentChordText;
-
-        // Method to set current chord
-        public void SetChord(string chord)
+        // Set the current chord
+        public void SetCurrentChord(string chordName)
         {
-            if (currentChord != "default")
-            {
-                currentChord = "default"; // Reset to default if not already default
-                currentChordText.text = " "; // Clear display
-            }
-            else
-            {
-                currentChord = chord; // Set current chord
-                currentChordText.text = currentChord; // Display current chord
-            }
+            currentChord = chordName;
+            Debug.Log("Current chord set to: " + currentChord);
         }
 
-        // Method to get current chord
+        // Retrieve the current chord
         public string GetCurrentChord()
         {
-            return currentChord; // Return current chord
+            return currentChord;
         }
     }
 }

@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using System.Collections.Generic;
 
 namespace guitar
 {
@@ -28,25 +27,18 @@ namespace guitar
 
             // Initialize currentNotes array
             currentNotes = new Tuple<int, int>[strings.Length];
-        }
 
-        // Update
-        private void Update()
-        {
-            // Find current chord/note values every frame
-            UpdateChord();
+            // Set default chord initially
+            currentChord = "default";
             UpdateNotes();
-
-            Debug.Log(currentChord);
         }
 
-        // Update Methods
-        private void UpdateChord()
+        // Method to change the current chord
+        public void ChangeChord(string newChord)
         {
-            // Retrieve current chord from ChordManager
-            currentChord = chordManager.GetCurrentChord();
-            if (string.IsNullOrEmpty(currentChord))
-                currentChord = "default"; // Default chord if current chord is null or empty
+            currentChord = newChord;
+            UpdateNotes();
+            Debug.Log($"Chord changed to: {currentChord}");
         }
 
         private void UpdateNotes()
