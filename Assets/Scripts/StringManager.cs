@@ -40,7 +40,7 @@ namespace guitar
         {
             if (currentNoteAudio != null)
             {
-                audioSource.Stop();
+                audioSource.Stop(); //TEMP - should they be allowed to overlap?
                 audioSource.PlayOneShot(currentNoteAudio);
             }
             else

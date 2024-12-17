@@ -1,16 +1,17 @@
 using System;
 using UnityEngine;
+using TMPro;
 
 namespace guitar
 {
     public class GuitarManager : MonoBehaviour
     {
-        // References to ChordManager and StringManager
-        private ChordManager chordManager;
+        // References
         private StringManager stringManager;
 
         // Current chord
         [SerializeField] private string currentChord;
+        public TextMeshProUGUI currentChordText;
 
         // Strings
         public GameObject[] strings;
@@ -21,23 +22,34 @@ namespace guitar
         // Initialize
         void Start()
         {
-            // Find and initialize ChordManager and StringManagers
-            chordManager = FindAnyObjectByType<ChordManager>();
+            // Initialize Managers
             stringManager = FindFirstObjectByType<StringManager>();
 
             // Initialize currentNotes array
             currentNotes = new Tuple<int, int>[strings.Length];
 
             // Set default chord initially
-            currentChord = "default";
+            currentChord = " ";
+            currentChordText.text = currentChord;
             UpdateNotes();
         }
 
         // Method to change the current chord
         public void ChangeChord(string newChord)
         {
+            // Update the current chords state
             currentChord = newChord;
+            
+            // Update the text that displays the current chord - " " if default chord
+            if(currentChord != "default")
+                currentChordText.text = currentChord;
+            else 
+                currentChordText.text = " ";
+
+            // Update notes to adhere to the new current Chord
             UpdateNotes();
+
+            // TEMP - debug message
             Debug.Log($"Chord changed to: {currentChord}");
         }
 
