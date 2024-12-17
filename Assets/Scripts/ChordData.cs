@@ -79,6 +79,7 @@ namespace guitar
         {
             // Order -> Alphabetical
 
+            // TODO: needs audio X4 audio files
             AddChord("B", new List<Note> {
                 new Note { noteX = -1, noteY = 1 },
                 new Note { noteX = 2, noteY = 2 },
@@ -105,7 +106,6 @@ namespace guitar
                 new Note { noteX = 3, noteY = 5 },
                 new Note { noteX = 2, noteY = 6 }
             });
-
             
             AddChord("E", new List<Note> {
                 new Note { noteX = 0, noteY = 1 },
@@ -140,7 +140,7 @@ namespace guitar
         private void AddMinorChords()
         {
             // Order -> Alphabetical
-            
+
             AddChord("Em", new List<Note> {
                 new Note { noteX = 0, noteY = 1 },
                 new Note { noteX = 2, noteY = 2 },
