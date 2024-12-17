@@ -109,9 +109,9 @@ namespace guitar
             
             AddChord("E", new List<Note> {
                 new Note { noteX = 0, noteY = 1 },
-                new Note { noteX = 1, noteY = 2 },
+                new Note { noteX = 2, noteY = 2 },
                 new Note { noteX = 2, noteY = 3 },
-                new Note { noteX = 2, noteY = 4 },
+                new Note { noteX = 1, noteY = 4 },
                 new Note { noteX = 0, noteY = 5 },
                 new Note { noteX = 0, noteY = 6 }
             });

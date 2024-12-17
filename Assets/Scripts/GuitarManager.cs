@@ -29,8 +29,8 @@ namespace guitar
             currentNotes = new Tuple<int, int>[strings.Length];
 
             // Set default chord initially
-            currentChord = " ";
-            currentChordText.text = currentChord;
+            currentChord = "default";
+            currentChordText.text = " ";
             UpdateNotes();
         }
 
