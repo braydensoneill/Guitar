@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace guitar
@@ -21,6 +22,12 @@ namespace guitar
         [SerializeField] private int currentNoteY;
         [SerializeField] private AudioClip currentNoteAudio;
 
+        // Queue to manage currently playing sounds
+        private Queue<AudioSource> playingQueue = new Queue<AudioSource>();
+
+        // Maximum overlap for this string
+        private const int maxOverlap = 3;
+
         void Start()
         {
             ChordData chordData = FindFirstObjectByType<ChordData>();
@@ -40,13 +47,33 @@ namespace guitar
         {
             if (currentNoteAudio != null)
             {
-                audioSource.Stop(); //TEMP - should they be allowed to overlap?
-                audioSource.PlayOneShot(currentNoteAudio);
+                // Stop audio that exceeds the maximum overlap
+                if (playingQueue.Count >= maxOverlap)
+                {
+                    AudioSource oldestSource = playingQueue.Dequeue();
+                    oldestSource.Stop();
+                }
+
+                // Play the new audio
+                AudioSource newSource = CreateAudioSource();
+                newSource.PlayOneShot(currentNoteAudio);
+
+                // Add the new audio to the queue
+                playingQueue.Enqueue(newSource);
             }
             else
             {
                 Debug.LogWarning("Current note audio is null. Cannot play string sound.");
             }
+        }
+
+        // Helper method to create a new AudioSource
+        private AudioSource CreateAudioSource()
+        {
+            AudioSource newSource = gameObject.AddComponent<AudioSource>();
+            newSource.clip = currentNoteAudio;
+            newSource.playOnAwake = false;
+            return newSource;
         }
 
         public Tuple<int, int> GetCurrentNote(string currentChord)

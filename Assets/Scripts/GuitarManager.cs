@@ -30,7 +30,7 @@ namespace guitar
 
             // Set default chord initially
             currentChord = "default";
-            currentChordText.text = " ";
+            currentChordText.text = "/";
             UpdateNotes();
         }
 
@@ -44,7 +44,7 @@ namespace guitar
             if(currentChord != "default")
                 currentChordText.text = currentChord;
             else 
-                currentChordText.text = " ";
+                currentChordText.text = "/";
 
             // Update notes to adhere to the new current Chord
             UpdateNotes();
