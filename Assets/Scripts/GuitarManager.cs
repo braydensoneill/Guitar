@@ -18,8 +18,8 @@ namespace guitar
         // Strings
         public GameObject[] strings;
 
-        // // Current Guitar Info text fields
-        // public TextMeshProUGUI[] currentStringTexts;
+        // Current Guitar Info text fields
+        public TextMeshProUGUI[] currentStringTexts;
 
         // Current notes
         [SerializeField] private Tuple<int, int>[] currentNotes;
@@ -36,7 +36,7 @@ namespace guitar
             // Set default chord initially
             currentChord = "default";
             currentChordText.text = "/";
-            //ResetCurrentStringText();
+            ResetCurrentStringText();
             UpdateNotes();
         }
 
@@ -45,7 +45,7 @@ namespace guitar
         {
             // Update the current chords state
             currentChord = newChord;
-            
+
             // Update the text that displays the current chord
             currentChordText.text = (currentChord != "default") ? currentChord : "/";
 
@@ -63,22 +63,23 @@ namespace guitar
             {
                 currentNotes[i] = strings[i].GetComponent<StringManager>().GetCurrentNote(currentChord);
             }
-
-            // // Update the text for each string
-            // for (int i = 0; i < currentStringTexts.Length; i++)
-            // {
-            //     // Update string text with the current note's x value
-            //     currentStringTexts[i].text = currentNotes[i].Item1.ToString();
-            // }
+        
+            // Update the text for each string
+            for (int i = 0; i < currentStringTexts.Length; i++)
+            {
+                // If noteX is -1, display 'X'; otherwise, display the noteX value
+                currentStringTexts[i].text = (currentNotes[i].Item1 == -1) ? "X" : currentNotes[i].Item1.ToString();
+            }
         }
 
-        // private void ResetCurrentStringText()
-        // {
-        //     // Reset all string text fields to "0" initially
-        //     foreach (var textField in currentStringTexts)
-        //     {
-        //         textField.text = "0";
-        //     }
-        // }
+
+        private void ResetCurrentStringText()
+        {
+            // Reset all string text fields to "0" initially
+            foreach (var textField in currentStringTexts)
+            {
+                textField.text = "0";
+            }
+        }
     }
 }
