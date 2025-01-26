@@ -77,33 +77,24 @@ namespace guitar
 
         private void AddMajorChords()
         {
-            // Order -> Alphabetical
-
-            AddChord("A", new List<Note> {
-                new Note { noteX = -1, noteY = 1 },
-                new Note { noteX = 0, noteY = 2 },
-                new Note { noteX = 2, noteY = 3 },
-                new Note { noteX = 2, noteY = 4 },
-                new Note { noteX = 2, noteY = 5 },
-                new Note { noteX = 0, noteY = 6 }
-            });
-
-            AddChord("B", new List<Note> {
-                new Note { noteX = -1, noteY = 1 },
-                new Note { noteX = -1, noteY = 2 },
-                new Note { noteX = 3, noteY = 3 },
-                new Note { noteX = 3, noteY = 4 },
-                new Note { noteX = 3, noteY = 5 },
-                new Note { noteX = 1, noteY = 6 }
-            });
+            // Order -> See wheel
 
             AddChord("C", new List<Note> {
-                new Note { noteX = -1, noteY = 1 },
+                new Note { noteX = 0, noteY = 1 },
                 new Note { noteX = 3, noteY = 2 },
                 new Note { noteX = 2, noteY = 3 },
                 new Note { noteX = 0, noteY = 4 },
                 new Note { noteX = 1, noteY = 5 },
                 new Note { noteX = 0, noteY = 6 }
+            });
+
+            AddChord("G", new List<Note> {
+                new Note { noteX = 3, noteY = 1 },
+                new Note { noteX = 2, noteY = 2 },
+                new Note { noteX = 0, noteY = 3 },
+                new Note { noteX = 0, noteY = 4 },
+                new Note { noteX = 0, noteY = 5 },
+                new Note { noteX = 3, noteY = 6 }
             });
 
             AddChord("D", new List<Note> {
@@ -115,7 +106,15 @@ namespace guitar
                 new Note { noteX = 2, noteY = 6 }
             });
 
-            
+            AddChord("A", new List<Note> {
+                new Note { noteX = -1, noteY = 1 },
+                new Note { noteX = 0, noteY = 2 },
+                new Note { noteX = 2, noteY = 3 },
+                new Note { noteX = 2, noteY = 4 },
+                new Note { noteX = 2, noteY = 5 },
+                new Note { noteX = 0, noteY = 6 }
+            });
+
             AddChord("E", new List<Note> {
                 new Note { noteX = 0, noteY = 1 },
                 new Note { noteX = 2, noteY = 2 },
@@ -125,30 +124,73 @@ namespace guitar
                 new Note { noteX = 0, noteY = 6 }
             });
 
+            AddChord("B", new List<Note> {
+                new Note { noteX = -1, noteY = 1 },
+                new Note { noteX = 2, noteY = 2 },
+                new Note { noteX = 4, noteY = 3 },
+                new Note { noteX = 4, noteY = 4 },
+                new Note { noteX = 4, noteY = 5 },
+                new Note { noteX = 2, noteY = 6 }
+            });
+
+            AddChord("Gb", new List<Note> {
+                new Note { noteX = 2, noteY = 1 },
+                new Note { noteX = 4, noteY = 2 },
+                new Note { noteX = 4, noteY = 3 },
+                new Note { noteX = 3, noteY = 4 },
+                new Note { noteX = 2, noteY = 5 },
+                new Note { noteX = 2, noteY = 6 }
+            });
+
+            AddChord("Db", new List<Note> {
+                new Note { noteX = -1, noteY = 1 },
+                new Note { noteX = 4, noteY = 2 },
+                new Note { noteX = 6, noteY = 3 },
+                new Note { noteX = 6, noteY = 4 },
+                new Note { noteX = 6, noteY = 5 },
+                new Note { noteX = 4, noteY = 6 }
+            });
+
+            AddChord("Ab", new List<Note> {
+                new Note { noteX = 4, noteY = 1 },
+                new Note { noteX = 6, noteY = 2 },
+                new Note { noteX = 6, noteY = 3 },
+                new Note { noteX = 5, noteY = 4 },
+                new Note { noteX = 4, noteY = 5 },
+                new Note { noteX = 4, noteY = 6 }
+            });
+            
+            AddChord("Eb", new List<Note> {
+                new Note { noteX = -1, noteY = 1 },
+                new Note { noteX = 6, noteY = 2 },
+                new Note { noteX = 8, noteY = 3 },
+                new Note { noteX = 8, noteY = 4 },
+                new Note { noteX = 8, noteY = 5 },
+                new Note { noteX = 6, noteY = 6 }
+            });
+
+            AddChord("Bb", new List<Note> {
+                new Note { noteX = -1, noteY = 1 },
+                new Note { noteX = 1, noteY = 2 },
+                new Note { noteX = 3, noteY = 3 },
+                new Note { noteX = 3, noteY = 4 },
+                new Note { noteX = 3, noteY = 5 },
+                new Note { noteX = 1, noteY = 6 }
+            });
+
             AddChord("F", new List<Note> {
                 new Note { noteX = 1, noteY = 1 },
                 new Note { noteX = 3, noteY = 2 },
                 new Note { noteX = 3, noteY = 3 },
                 new Note { noteX = 2, noteY = 4 },
                 new Note { noteX = 1, noteY = 5 },
-                new Note { noteX = 0, noteY = 6 }
+                new Note { noteX = 1, noteY = 6 }
             });
-
-            AddChord("G", new List<Note> {
-                new Note { noteX = 3, noteY = 1 },
-                new Note { noteX = 2, noteY = 2 },
-                new Note { noteX = 0, noteY = 3 },
-                new Note { noteX = 0, noteY = 4 },
-                new Note { noteX = 3, noteY = 5 },
-                new Note { noteX = 3, noteY = 6 }
-            });
-
-            // Add other major chords here
         }
 
         private void AddMinorChords()
         {
-            // Order -> Alphabetical
+            // Order -> See wheel
 
             AddChord("Am", new List<Note> {
                 new Note { noteX = -1, noteY = 1 },
@@ -157,15 +199,6 @@ namespace guitar
                 new Note { noteX = 2, noteY = 4 },
                 new Note { noteX = 1, noteY = 5 },
                 new Note { noteX = 0, noteY = 6 }
-            });
-
-            AddChord("Dm", new List<Note> {
-                new Note { noteX = -1, noteY = 1 },
-                new Note { noteX = -1, noteY = 2 },
-                new Note { noteX = 0, noteY = 3 },
-                new Note { noteX = 2, noteY = 4 },
-                new Note { noteX = 3, noteY = 5 },
-                new Note { noteX = 1, noteY = 6 }
             });
 
             AddChord("Em", new List<Note> {
@@ -177,6 +210,60 @@ namespace guitar
                 new Note { noteX = 0, noteY = 6 }
             });
 
+            AddChord("Bm", new List<Note> {
+                new Note { noteX = -1, noteY = 1 },
+                new Note { noteX = 2, noteY = 2 },
+                new Note { noteX = 4, noteY = 3 },
+                new Note { noteX = 4, noteY = 4 },
+                new Note { noteX = 3, noteY = 5 },
+                new Note { noteX = 2, noteY = 6 }
+            });
+
+            AddChord("F#m", new List<Note> {
+                new Note { noteX = 2, noteY = 1 },
+                new Note { noteX = 4, noteY = 2 },
+                new Note { noteX = 4, noteY = 3 },
+                new Note { noteX = 2, noteY = 4 },
+                new Note { noteX = 2, noteY = 5 },
+                new Note { noteX = 2, noteY = 6 }
+            });
+
+            AddChord("C#m", new List<Note> {
+                new Note { noteX = -1, noteY = 1 },
+                new Note { noteX = 4, noteY = 2 },
+                new Note { noteX = 6, noteY = 3 },
+                new Note { noteX = 6, noteY = 4 },
+                new Note { noteX = 5, noteY = 5 },
+                new Note { noteX = 4, noteY = 6 }
+            });
+
+            AddChord("G#m", new List<Note> {
+                new Note { noteX = 4, noteY = 1 },
+                new Note { noteX = 6, noteY = 2 },
+                new Note { noteX = 6, noteY = 3 },
+                new Note { noteX = 4, noteY = 4 },
+                new Note { noteX = 4, noteY = 5 },
+                new Note { noteX = 4, noteY = 6 }
+            });
+
+            AddChord("D#m", new List<Note> {
+                new Note { noteX = -1, noteY = 1 },
+                new Note { noteX = 6, noteY = 2 },
+                new Note { noteX = 8, noteY = 3 },
+                new Note { noteX = 8, noteY = 4 },
+                new Note { noteX = 6, noteY = 5 },
+                new Note { noteX = 6, noteY = 6 }
+            });
+
+            AddChord("A#m", new List<Note> {
+                new Note { noteX = -1, noteY = 1 },
+                new Note { noteX = 6, noteY = 2 },
+                new Note { noteX = 8, noteY = 3 },
+                new Note { noteX = 8, noteY = 4 },
+                new Note { noteX = 6, noteY = 5 },
+                new Note { noteX = 6, noteY = 6 }
+            });
+
             AddChord("Fm", new List<Note> {
                 new Note { noteX = 1, noteY = 1 },
                 new Note { noteX = 3, noteY = 2 },
@@ -184,6 +271,33 @@ namespace guitar
                 new Note { noteX = 1, noteY = 4 },
                 new Note { noteX = 1, noteY = 5 },
                 new Note { noteX = 1, noteY = 6 }
+            });
+
+            AddChord("Cm", new List<Note> {
+                new Note { noteX = -1, noteY = 1 },
+                new Note { noteX = 3, noteY = 2 },
+                new Note { noteX = 5, noteY = 3 },
+                new Note { noteX = 5, noteY = 4 },
+                new Note { noteX = 4, noteY = 5 },
+                new Note { noteX = 3, noteY = 6 }
+            });
+
+            AddChord("Gm", new List<Note> {
+                new Note { noteX = 3, noteY = 1 },
+                new Note { noteX = 5, noteY = 2 },
+                new Note { noteX = 5, noteY = 3 },
+                new Note { noteX = 3, noteY = 4 },
+                new Note { noteX = 3, noteY = 5 },
+                new Note { noteX = 3, noteY = 6 }
+            });
+
+            AddChord("Dm", new List<Note> {
+                new Note { noteX = -1, noteY = 1 },
+                new Note { noteX = 5, noteY = 2 },
+                new Note { noteX = 7, noteY = 3 },
+                new Note { noteX = 7, noteY = 4 },
+                new Note { noteX = 6, noteY = 5 },
+                new Note { noteX = 5, noteY = 6 }
             });
         }
     }

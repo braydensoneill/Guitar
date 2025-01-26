@@ -153,7 +153,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -65.8, y: 41.6}
+  m_AnchoredPosition: {x: -68.5, y: 41.6}
   m_SizeDelta: {x: 35, y: 35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &12073512
@@ -1114,6 +1114,7 @@ Transform:
   - {fileID: 1492750834}
   - {fileID: 782628376}
   - {fileID: 903103569}
+  - {fileID: 358671145}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &262581802
@@ -2059,7 +2060,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Bbm
+  m_text: A#m
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2138,6 +2139,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 357639735}
   m_CullTransparentMesh: 1
+--- !u!1 &358671144
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 358671145}
+  - component: {fileID: 358671146}
+  m_Layer: 0
+  m_Name: TouchManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &358671145
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 358671144}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 218.37508, y: 270.96045, z: -49.206352}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 255592096}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &358671146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 358671144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76d678c09a383ee48a405c497c1a23c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  touchIndicatorPrefab: {fileID: 338379841711373280, guid: faed74420d80ad144abb37b35ec57001, type: 3}
+  canvas: {fileID: 308773445}
 --- !u!1 &371572324
 GameObject:
   m_ObjectHideFlags: 0
@@ -3694,7 +3741,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 39.6, y: -64.6}
+  m_AnchoredPosition: {x: 41.1, y: -67.6}
   m_SizeDelta: {x: 35, y: 35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &637879393
@@ -5785,7 +5832,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 66.1, y: 41.2}
+  m_AnchoredPosition: {x: 67.9, y: 41.2}
   m_SizeDelta: {x: 35, y: 35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1017712607
@@ -6121,7 +6168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a32e291e3929f294cb7983eedecdbb16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chordName: Bbm
+  chordName: A#m
 --- !u!114 &1049850711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8943,7 +8990,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a32e291e3929f294cb7983eedecdbb16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chordName: Ebm
+  chordName: D#m
 --- !u!114 &1459364440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10570,7 +10617,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1748777481}
   m_Layer: 5
-  m_Name: Bbm
+  m_Name: A#m
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10594,7 +10641,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -39.1, y: -64.5}
+  m_AnchoredPosition: {x: -39.9, y: -66.5}
   m_SizeDelta: {x: 35, y: 35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1759229582
@@ -11403,7 +11450,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1873547983}
   m_Layer: 5
-  m_Name: Ebm
+  m_Name: D#m
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11917,7 +11964,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Ebm
+  m_text: D#m
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
