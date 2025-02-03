@@ -80,7 +80,7 @@ namespace guitar
             // Order -> See wheel
 
             AddChord("C", new List<Note> {
-                new Note { noteX = 0, noteY = 1 },
+                new Note { noteX = -1, noteY = 1 },
                 new Note { noteX = 3, noteY = 2 },
                 new Note { noteX = 2, noteY = 3 },
                 new Note { noteX = 0, noteY = 4 },
